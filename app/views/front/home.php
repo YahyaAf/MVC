@@ -17,7 +17,8 @@
                         <h2 class="text-2xl font-semibold text-center text-indigo-600"><?= htmlspecialchars($article['title']) ?></h2>
                     </div>
                     <div class="p-6 bg-gray-50 rounded-b-lg">
-                        <p class="text-base text-gray-700"><?= htmlspecialchars($article['content']) ?></p>
+                        <p class="text-base text-gray-700"><?= htmlspecialchars($article['description']) ?></p>
+                        <p class="text-base text-gray-700"><?= htmlspecialchars($article['photo']) ?></p>
                         <!-- Button with article ID -->
                         <div class="text-center mt-4">
                             <a href="/article?id=<?= $article['id'] ?>" class="inline-block px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition duration-300">
