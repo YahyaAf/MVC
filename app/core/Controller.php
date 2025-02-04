@@ -5,6 +5,6 @@ namespace App\core;
 class Controller {
     public function render($view,$data=[]){
         extract($data);
-        require __DIR__. "/../views/front/$view.php";
+        require __DIR__. "/../views/front/$view.twig";
     }
 }
