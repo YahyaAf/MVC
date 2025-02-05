@@ -34,7 +34,7 @@ class UserController extends Controller {
             $result = $this->userModel->signup($name, $email, $password);
 
             if ($result === true) {
-                header("Location: /login");
+                $this->render("login");
                 exit;
             } else {
                 $this->render('signup', ['error' => $result]);
@@ -57,7 +57,7 @@ class UserController extends Controller {
             $result = $this->userModel->login($email, $password);
 
             if ($result) {
-                header("Location: /home");
+                header("Location: /");
                 exit;
             } else {
                 $this->render('login', ['error' => 'Email ou mot de passe incorrect.']);
