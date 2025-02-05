@@ -17,6 +17,6 @@ $router->get('/signup', userController::class, 'signupPage');
 
 $router->post('/login', userController::class, 'login');
 $router->post('/signup', userController::class, 'signup');
-$router->post('/logout', userController::class, 'logout');
+$router->get('/logout', userController::class, 'logout');
 
 $router->dispatch();

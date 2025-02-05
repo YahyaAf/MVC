@@ -68,8 +68,10 @@ class UserController extends Controller {
     }
 
     public function logout() {
-        $this->userModel->logout();
-        header("Location: /login");
+        session_start();  
+        session_unset(); 
+        session_destroy();  
+        header('Location: /login');
         exit;
     }
 }
