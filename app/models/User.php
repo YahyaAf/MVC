@@ -2,13 +2,17 @@
 namespace App\models;
 
 use App\config\Database;
+use App\core\Session;
 use PDO;
 
 class User {
     protected $connection;
+    private $session;
 
     public function __construct() {
         $this->connection = Database::connect();
+        $this->session = new Session();
+        
     }
 
     public function signup($name, $email, $password) {
@@ -42,8 +46,8 @@ class User {
         
         if ($user && password_verify($password, $user['password'])) {
             session_start();
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_name'] = $user['name'];
+            $this->session->set('user_id',$user['id']);
+            $this->session->set('user_name',$user['name']);
             return true;
         }
 
