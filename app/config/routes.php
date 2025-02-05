@@ -18,6 +18,6 @@ $router->get('/signup', userController::class, 'signupPage');
 
 $router->post('/login', Auth::class, 'login');
 $router->post('/signup', userController::class, 'signup');
-$router->get('/logout', userController::class, 'logout');
+$router->get('/logout', Auth::class, 'logout');
 
 $router->dispatch();
