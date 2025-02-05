@@ -45,7 +45,6 @@ class User {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($user && password_verify($password, $user['password'])) {
-            session_start();
             $this->session->set('user_id',$user['id']);
             $this->session->set('user_name',$user['name']);
             return true;

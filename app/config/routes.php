@@ -2,6 +2,7 @@
 use App\core\Router;
 use App\controllers\front\articleController;
 use App\controllers\front\userController;
+use App\core\Auth;
 
 
 $router = new Router();
@@ -15,7 +16,7 @@ $router->get('/login', userController::class, 'loginPage');
 $router->get('/signup', userController::class, 'signupPage');
 
 
-$router->post('/login', userController::class, 'login');
+$router->post('/login', Auth::class, 'login');
 $router->post('/signup', userController::class, 'signup');
 $router->get('/logout', userController::class, 'logout');
 
