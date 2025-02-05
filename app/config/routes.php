@@ -9,4 +9,9 @@ $router->get('/', articleController::class, 'home');
 
 $router->get('/article', articleController::class, 'article');
 
+
+$router->get('/login', userController::class, 'login');
+$router->post('/signup', userController::class, 'signup');
+$router->post('/logout', userController::class, 'logout');
+
 $router->dispatch();
