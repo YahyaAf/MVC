@@ -3,13 +3,16 @@ namespace App\core;
 
 use App\core\Controller;
 use App\models\User;
+use App\core\Session;
 
 class Auth extends Controller {
     protected $userModel;
+    private $session;
 
     public function __construct() {
         parent::__construct();
         $this->userModel = new User();
+        $this->session = new Session();
     }
 
     public function login() {
@@ -36,9 +39,7 @@ class Auth extends Controller {
     }
 
     public function logout() {
-        session_start();  
-        session_unset(); 
-        session_destroy();  
+        $this->session->destroy(); 
         header('Location: /login');
         exit;
     }
