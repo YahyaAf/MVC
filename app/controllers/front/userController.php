@@ -12,6 +12,14 @@ class UserController extends Controller {
         $this->userModel = new User();
     }
 
+    public function loginPage(){
+        $this->render('login');
+    }
+
+    public function signupPage(){
+        $this->render('signup');
+    }
+
     public function signup() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = trim($_POST['name']);

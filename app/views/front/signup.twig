@@ -38,6 +38,12 @@
             </div>
         </form>
 
+        {% if error %}
+            <div class="mt-4 text-red-500 text-center">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+
         <p class="text-center text-gray-600 mt-4">
             Already have an account? 
             <a href="/login" class="text-indigo-600 font-semibold hover:underline">Log in</a>
